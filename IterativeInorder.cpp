@@ -7,6 +7,7 @@ struct Node{
         data=val;
         left=right=NULL;
     }
+
 };
 Node* insert(Node* root, int val){
     if(root==NULL){
