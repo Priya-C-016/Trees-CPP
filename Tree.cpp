@@ -30,7 +30,7 @@ void print(Node* root){
 }
 int main(){
     Node* root=NULL;
-    root=insert(root,4);
+    root=insert(root,4);  //These calls don't update root directly – because insert() returns a pointer, and you're not capturing the returned pointer.
     insert(root,5);
     insert(root,2);
     insert(root,8);
