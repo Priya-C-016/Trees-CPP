@@ -46,11 +46,11 @@ Node* deleteNode(Node* root,int val){
         root->left = deleteNode(root->left, val);
     } else if (val > root->data) {
         root->right = deleteNode(root->right, val);
-    } else{
+    } else{//if node has zero childer
         if(root->left==NULL && root->right==NULL){
             delete root;
             return NULL;
-        }
+        }//It node has only one child
         else if(root->left==NULL){
             Node* temp=root->right;
             delete root;
@@ -61,7 +61,7 @@ Node* deleteNode(Node* root,int val){
             delete root;
             return temp;
         }
-        else{
+        else{// if node has two childs
             Node* temp=finmin(root->left);
             root->data=temp->data;
             root->right=deleteNode(root->right,temp->data);
